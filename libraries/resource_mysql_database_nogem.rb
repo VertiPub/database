@@ -15,6 +15,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# TODO:  This file can be removed when our base centos is preloaded with 
+# mysql and packages
 
 require File.join(File.dirname(__FILE__), 'resource_database')
 require File.join(File.dirname(__FILE__), 'provider_database_mysql_nogem')
