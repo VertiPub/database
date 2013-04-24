@@ -27,6 +27,9 @@ class Chef
         include Chef::Mixin::ShellOut
 
         def load_current_resource
+          gem_package = Chef::Resource::GemPackage.new('mysql')
+          gem_package.action(:nothing)
+          gem_package.run_action(:install)
           Gem.clear_paths
           require 'mysql'
           @current_resource = Chef::Resource::DatabaseUser.new(@new_resource.name)
